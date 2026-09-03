@@ -140,10 +140,10 @@ export function Navbar() {
                 <Search className="w-4 h-4" />
               </button>
 
-              {/* Orange Hamburger Menu Button */}
+              {/* Orange Hamburger Menu Button (Mobile Only) */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="w-10 h-10 rounded-full bg-[#FF8A00] hover:bg-[#E67600] text-white flex items-center justify-center transition-all shadow-md"
+                className="lg:hidden w-10 h-10 rounded-full bg-[#FF8A00] hover:bg-[#E67600] text-white flex items-center justify-center transition-all shadow-md shrink-0"
                 aria-label="Toggle Navigation Menu"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 stroke-[2.4]" />}
