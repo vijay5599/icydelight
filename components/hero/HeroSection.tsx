@@ -2,204 +2,164 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { 
-  Sparkles, 
-  ArrowRight, 
-  Handshake, 
-  Star, 
-  ShieldCheck, 
-  Heart, 
-  Award,
-  IceCream
-} from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-to-b from-[#FFF5F7] via-[#FFE3EB]/40 to-[#FFF5F7]">
-      {/* Background Soft Glow Orbs & Wave Details */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-[#FF3366]/20 via-[#FF8A73]/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-rose-200/30 rounded-full blur-2xl pointer-events-none -z-10" />
-      <div className="absolute -top-20 -right-20 w-96 h-96 bg-pink-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
-
-      {/* Decorative Wave in Background */}
-      <div className="absolute inset-0 pointer-events-none -z-10 opacity-30">
-        <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 800" fill="none">
+    <section className="relative pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FFF9F2] via-[#FFF3E0]/30 to-[#FFF9F2]">
+      {/* Background Soft Cream & Milk Flow Waves */}
+      <div className="absolute top-0 right-0 w-full lg:w-2/3 h-full pointer-events-none -z-10 opacity-70">
+        <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 900 600" fill="none">
           <path
-            d="M-100 400 C 300 200, 600 600, 1000 350 C 1200 200, 1400 450, 1600 300"
-            stroke="#FF8A73"
-            strokeWidth="4"
-            strokeDasharray="12 12"
+            d="M 200 0 C 400 100, 300 400, 900 300 L 900 0 Z"
+            fill="#FFE8D1"
+            opacity="0.5"
+          />
+          <path
+            d="M 400 0 C 600 200, 500 500, 900 450 L 900 0 Z"
+            fill="#FFA726"
+            opacity="0.15"
           />
         </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Headline, Subheadline & Chunky Action Buttons */}
-          <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-            {/* Top Tagline Badge */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Big Headline & CTA */}
+          <div className="lg:col-span-6 space-y-6 text-center lg:text-left z-10">
+            {/* Orange Kicker */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border-2 border-rose-200 shadow-sm"
+              transition={{ duration: 0.5 }}
             >
-              <span className="flex h-2 w-2 rounded-full bg-[#FF3366] animate-ping" />
-              <span className="text-xs md:text-sm font-black text-[#2A1220] flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-[#FF3366]" /> 100% Real Farm Milk & Mountain Berries
+              <span className="text-base sm:text-lg md:text-xl font-bold text-[#FF8A00] tracking-tight">
+                Life is Better
               </span>
             </motion.div>
 
-            {/* Main Punchy Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+            {/* Big Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-[#2A1220] tracking-tight leading-[1.05]"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="space-y-1"
             >
-              Life tastes better with <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-[#FF3366] via-[#FF8A73] to-[#FF3366] bg-clip-text text-transparent underline decoration-[#FF8A73]/40">
-                FrostBerry
-              </span>{' '}
-              Ice Cream
-            </motion.h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#14213D] tracking-tight leading-[0.95]">
+                With
+              </h1>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#14213D] tracking-tight leading-[0.95]">
+                IcyDelight
+              </h1>
+            </motion.div>
 
             {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 font-semibold max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-sm sm:text-base md:text-lg text-gray-600 font-medium max-w-md mx-auto lg:mx-0 leading-relaxed"
             >
-              High-voltage frozen indulgence made using real orchard fruits, rich whole milk, and single-origin chocolate. Churned to silky perfection without artificial stabilizers.
+              Deliciously crafted ice creams made with natural ingredients and real fruit.
             </motion.p>
 
-            {/* Chunky Action Buttons */}
+            {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="pt-2 flex justify-center lg:justify-start"
             >
               <Link
                 href="/products"
-                className="w-full sm:w-auto px-8 py-4 rounded-3xl bg-[#FF3366] text-white text-base font-black uppercase tracking-tight shadow-[6px_6px_0px_0px_#2A1220] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex items-center justify-center gap-2 group"
+                className="orange-pill-btn px-8 py-4 rounded-full text-white text-sm sm:text-base font-bold inline-flex items-center gap-2.5 shadow-lg group"
               >
                 <span>Explore Products</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-
-              <Link
-                href="/distributor"
-                className="w-full sm:w-auto px-8 py-4 rounded-3xl bg-white border-2 border-rose-200 text-[#2A1220] text-base font-black uppercase tracking-tight shadow-[6px_6px_0px_0px_rgba(42,18,32,0.12)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200 flex items-center justify-center gap-2"
-              >
-                <Handshake className="w-5 h-5 text-[#FF3366]" />
-                <span>Become Distributor</span>
-              </Link>
-            </motion.div>
-
-            {/* Social Proof & Trust Badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs text-gray-700 border-t border-rose-200/80"
-            >
-              <div className="flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl border border-rose-200 shadow-sm">
-                <div className="flex items-center gap-0.5 text-amber-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <span className="font-black text-[#2A1220]">4.9 / 5.0 (15,000+ Scoops)</span>
-              </div>
-
-              <div className="flex items-center gap-1.5 font-black text-gray-800 bg-white px-3.5 py-2 rounded-2xl border border-rose-200 shadow-sm">
-                <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                <span>Zero Artificial Colors</span>
-              </div>
             </motion.div>
           </div>
 
-          {/* Right Column: Featured Ice Cream with Floating Fruits & Bakery Stickers */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
-            <div className="relative w-[320px] h-[320px] sm:w-[440px] sm:h-[440px] md:w-[480px] md:h-[480px] flex items-center justify-center">
-              {/* Ripple Circles */}
-              <div className="absolute inset-0 rounded-full border-4 border-dashed border-[#FF8A73]/40 animate-spin-slow" />
-              <div className="absolute w-[88%] h-[88%] rounded-full bg-gradient-to-tr from-[#FF8A73]/25 to-[#FF3366]/15 blur-xl" />
-              <div className="absolute w-[76%] h-[76%] rounded-full bg-white shadow-2xl border-4 border-[#FFE3EB]" />
+          {/* Right Column: Hero Visual with Orange Popsicle, Packaging Wrapper & Splash */}
+          <div className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[520px]">
+            {/* Liquid Juice Splash Background Artwork */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              {/* Splash Glow */}
+              <div className="w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-[#FFA726]/40 via-[#FF8A00]/25 to-transparent rounded-full blur-2xl animate-pulse-glow" />
+            </div>
 
-              {/* Main Featured Ice Cream Image with Float Animation */}
+            {/* Floating Orange Fruit Slice (Left) */}
+            <motion.div
+              animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute left-2 sm:left-6 top-1/3 z-20 w-24 h-24 sm:w-32 sm:h-32"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=400&q=80"
+                alt="Fresh Orange Slice"
+                className="w-full h-full object-cover rounded-full shadow-lg border-2 border-white"
+              />
+            </motion.div>
+
+            {/* Floating Whole Orange Half (Right) */}
+            <motion.div
+              animate={{ y: [0, 12, 0], rotate: [0, -6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              className="absolute right-0 sm:right-4 bottom-12 z-20 w-24 h-24 sm:w-32 sm:h-32"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1582979512210-99b6a53386f9?auto=format&fit=crop&w=400&q=80"
+                alt="Ripe Orange Fruit"
+                className="w-full h-full object-cover rounded-full shadow-lg border-2 border-white"
+              />
+            </motion.div>
+
+            {/* Main Center Product Composite */}
+            <div className="relative z-10 flex items-end justify-center gap-3 sm:gap-6">
+              {/* Product Packaging Wrapper Simulation */}
               <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative z-20 w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] md:w-[400px] md:h-[400px] rounded-[3.5rem] overflow-hidden shadow-2xl border-8 border-white group"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative w-36 sm:w-44 h-72 sm:h-88 rounded-2xl bg-white shadow-2xl border border-gray-100 p-3 flex flex-col justify-between overflow-hidden rotate-[-4deg]"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1549395156-e0c1fe6fc7a5?auto=format&fit=crop&w=1000&q=85"
-                  alt="FrostBerry Bliss Ice Cream"
-                  className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
-                  loading="eager"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-6">
-                  <div className="text-white">
-                    <span className="text-xs font-black uppercase tracking-wider bg-[#FF3366] px-3 py-1 rounded-full shadow-md">
-                      Chef Specialty
-                    </span>
-                    <h4 className="text-xl font-black mt-1">FrostBerry Bliss Cone</h4>
-                    <p className="text-xs text-rose-200 font-bold">Wild Mountain Berry & Cream Swirl</p>
+                <div className="text-center pt-2">
+                  <div className="w-8 h-8 rounded-full bg-[#14213D] mx-auto flex items-center justify-center text-[10px] text-white font-bold mb-1">
+                    ★
                   </div>
+                  <span className="text-sm font-black text-[#14213D] block">IcyDelight</span>
+                  <span className="text-[8px] font-bold text-gray-500 italic block">Make your choice right !!</span>
+                </div>
+
+                {/* Wrapper Center Artwork */}
+                <div className="relative w-full h-36 rounded-xl bg-gradient-to-b from-[#FF8A00] to-[#FFA726] p-2 flex flex-col items-center justify-center text-white shadow-inner">
+                  <div className="w-10 h-16 rounded-t-full bg-orange-200 border-2 border-white shadow-sm mb-1" />
+                  <span className="text-xs font-black uppercase tracking-wider">ICE CANDY</span>
+                  <span className="text-[10px] font-bold text-orange-100">ORANGE</span>
+                </div>
+
+                <div className="text-center pb-1">
+                  <span className="text-[9px] font-bold text-emerald-600 block">✓ 100% Real Fruit Pulp</span>
                 </div>
               </motion.div>
 
-              {/* Floating Sticker 1: Strawberry (Top Left) */}
+              {/* Real Orange Ice Candy Popsicle on Stick */}
               <motion.div
-                animate={{ y: [0, -16, 0], rotate: [0, 8, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-3 -left-3 sm:top-2 sm:left-2 z-30 bg-white p-3.5 rounded-3xl shadow-[0_10px_25px_rgba(42,18,32,0.12)] border-2 border-rose-200 flex items-center gap-2.5"
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+                className="relative w-40 sm:w-52 h-80 sm:h-96 flex flex-col items-center rotate-[6deg]"
               >
-                <span className="text-2xl">🍓</span>
-                <div>
-                  <span className="text-xs font-black text-[#2A1220] block">Real Strawberries</span>
-                  <span className="text-[10px] text-[#FF3366] font-black uppercase">Handpicked Daily</span>
+                {/* Frozen Ice Candy Bar Body */}
+                <div className="w-32 sm:w-40 h-56 sm:h-68 rounded-t-[3rem] rounded-b-2xl bg-gradient-to-b from-[#FF6F00] via-[#FF8A00] to-[#FFA726] shadow-2xl border-4 border-orange-200/60 relative overflow-hidden flex items-center justify-center">
+                  {/* Frost & Liquid Glisten */}
+                  <div className="absolute top-2 left-4 w-4 h-36 bg-white/30 rounded-full blur-[1px] -rotate-6" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-transparent" />
+                  <span className="text-3xl opacity-30">🍊</span>
                 </div>
-              </motion.div>
 
-              {/* Floating Sticker 2: Orange / Citrus (Bottom Right) */}
-              <motion.div
-                animate={{ y: [0, 14, 0], rotate: [0, -6, 0] }}
-                transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                className="absolute -bottom-5 -right-2 sm:bottom-4 sm:right-0 z-30 bg-white p-3.5 rounded-3xl shadow-[0_10px_25px_rgba(42,18,32,0.12)] border-2 border-orange-200 flex items-center gap-2.5"
-              >
-                <span className="text-2xl">🍊</span>
-                <div>
-                  <span className="text-xs font-black text-[#2A1220] block">Valencia Citrus</span>
-                  <span className="text-[10px] text-[#FF8A73] font-black uppercase">Cold-Pressed</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 3: Cream & Milk Splash (Top Right) */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute top-6 -right-5 sm:top-10 sm:-right-4 z-30 bg-gradient-to-r from-[#FF3366] to-[#FF8A73] text-white p-3.5 rounded-3xl shadow-[0_10px_25px_rgba(255,51,102,0.3)] flex items-center gap-2 border-2 border-white"
-              >
-                <span className="text-xl">🥛</span>
-                <div>
-                  <span className="text-xs font-black block">100% Whole Milk</span>
-                  <span className="text-[9px] text-rose-100 uppercase tracking-wider font-extrabold">Never Powdered</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Sticker 4: Mint Leaf (Bottom Left) */}
-              <motion.div
-                animate={{ y: [0, 8, 0], rotate: [0, 12, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-                className="absolute bottom-6 left-0 z-30 bg-white px-3.5 py-2 rounded-full shadow-lg border-2 border-emerald-200 flex items-center gap-1.5 text-xs font-black text-emerald-800"
-              >
-                <span>🍃 Fresh Mint Sprigs</span>
+                {/* Wooden Popsicle Stick */}
+                <div className="w-8 sm:w-10 h-24 sm:h-28 bg-[#E6C280] rounded-b-xl border-x-2 border-b-2 border-[#C9A057] shadow-md -mt-2" />
               </motion.div>
             </div>
           </div>

@@ -7,12 +7,10 @@ import {
   Search, 
   Menu, 
   X, 
-  IceCream, 
-  MapPin, 
-  Handshake, 
-  ChevronRight
+  ChevronDown,
+  ArrowRight
 } from 'lucide-react';
-import { navigationLinks } from '@/data/navigation';
+import { BrandLogo } from '@/components/shared/BrandLogo';
 import { SearchModal } from './SearchModal';
 
 export function Navbar() {
@@ -20,10 +18,11 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -31,138 +30,163 @@ export function Navbar() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsProductsDropdownOpen(false);
   }, [pathname]);
+
+  const navItems = [
+    { title: 'Home', href: '/' },
+    { 
+      title: 'Products', 
+      href: '/products',
+      hasDropdown: true 
+    },
+    { title: 'About Us', href: '/about' },
+    { title: 'Distributor', href: '/distributor' },
+    { title: 'Store Locator', href: '/store-locator' },
+    { title: 'Contact Us', href: '/contact' }
+  ];
+
+  const productCategories = [
+    { name: 'Ice Candy', href: '/products?category=ice-candy' },
+    { name: 'Cups', href: '/products?category=cups' },
+    { name: 'Chocobars', href: '/products?category=chocobars' },
+    { name: 'Cones', href: '/products?category=cones' },
+    { name: 'Family Packs', href: '/products?category=family-packs' },
+    { name: 'Sundaes', href: '/products?category=sundaes' },
+    { name: 'Ice Pops', href: '/products?category=ice-pops' }
+  ];
 
   return (
     <>
-      <header className="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-6 max-w-7xl mx-auto pointer-events-none">
-        <div
-          className={`pointer-events-auto w-full rounded-full transition-all duration-300 px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between gap-2 border-2 ${
-            isScrolled
-              ? 'bg-white/95 backdrop-blur-xl border-rose-200/90 shadow-[0_12px_32px_rgba(255,51,102,0.12)]'
-              : 'bg-[#FFF5F7]/95 backdrop-blur-xl border-rose-200/70 shadow-[0_8px_24px_rgba(42,18,32,0.06)]'
-          }`}
-        >
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-[#FF3366] to-[#FF8A73] flex items-center justify-center text-white shadow-md group-hover:scale-105 group-hover:rotate-6 transition-all duration-300">
-              <IceCream className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'py-3 bg-[#FFF9F2]/95 backdrop-blur-md shadow-sm border-b border-orange-100'
+            : 'py-5 bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            {/* 1. Left: Brand Logo */}
+            <BrandLogo />
+
+            {/* 2. Center: Navigation Links */}
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+
+                if (item.hasDropdown) {
+                  return (
+                    <div 
+                      key={item.title} 
+                      className="relative"
+                      onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                      onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                    >
+                      <Link
+                        href={item.href}
+                        className={`text-sm font-bold flex items-center gap-1 transition-colors py-2 ${
+                          isActive
+                            ? 'text-[#FF8A00] font-black border-b-2 border-[#FF8A00]'
+                            : 'text-[#14213D] hover:text-[#FF8A00]'
+                        }`}
+                      >
+                        <span>{item.title}</span>
+                        <ChevronDown className="w-3.5 h-3.5" />
+                      </Link>
+
+                      {/* Dropdown Menu */}
+                      {isProductsDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-2xl shadow-xl border border-orange-100 p-2 z-50 animate-fadeIn">
+                          {productCategories.map((cat) => (
+                            <Link
+                              key={cat.name}
+                              href={cat.href}
+                              className="block px-3 py-2 text-xs font-bold text-[#14213D] hover:bg-[#FFF9F2] hover:text-[#FF8A00] rounded-xl transition-colors"
+                            >
+                              {cat.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className={`text-sm font-bold transition-all py-2 ${
+                      isActive
+                        ? 'text-[#FF8A00] font-black border-b-2 border-[#FF8A00]'
+                        : 'text-[#14213D] hover:text-[#FF8A00]'
+                    }`}
+                  >
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* 3. Right: Search Button + Circular Orange Menu Toggle */}
+            <div className="flex items-center gap-3">
+              {/* Search Icon Button */}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="w-10 h-10 rounded-full bg-white border border-gray-200 text-[#14213D] hover:text-[#FF8A00] hover:border-[#FF8A00] flex items-center justify-center transition-all shadow-sm"
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </button>
+
+              {/* Orange Hamburger Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="w-10 h-10 rounded-full bg-[#FF8A00] hover:bg-[#E67600] text-white flex items-center justify-center transition-all shadow-md"
+                aria-label="Toggle Navigation Menu"
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 stroke-[2.4]" />}
+              </button>
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-black tracking-tight text-[#2A1220] leading-none">
-                Icy<span className="text-[#FF3366]">Delight</span>
-              </span>
-              <span className="text-[8px] font-extrabold tracking-widest uppercase text-rose-900/60 mt-0.5">
-                Artisanal Creamery
-              </span>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 whitespace-nowrap">
-            {navigationLinks.map((item) => {
-              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
-              return (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  className={`px-3 py-1.5 rounded-full text-xs font-black transition-all duration-200 whitespace-nowrap text-nowrap shrink-0 ${
-                    isActive
-                      ? 'bg-[#FF3366] text-white shadow-md shadow-pink-500/25'
-                      : 'text-[#2A1220] hover:text-[#FF3366] hover:bg-rose-100/60'
-                  }`}
-                >
-                  {item.title}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Right Action Icons & Buttons */}
-          <div className="hidden sm:flex items-center gap-2 shrink-0 whitespace-nowrap">
-            {/* Search Trigger Button */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2 sm:px-3 sm:py-1.5 rounded-full bg-white/90 border border-rose-200 text-gray-500 hover:text-[#FF3366] hover:border-[#FF3366] transition-all text-xs font-semibold shadow-sm group flex items-center gap-1.5"
-              aria-label="Open search"
-            >
-              <Search className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#FF3366] transition-colors" />
-              <span className="text-gray-400 group-hover:text-gray-600 hidden xl:inline">Search treats</span>
-              <kbd className="text-[9px] bg-rose-50 text-gray-400 font-mono px-1 rounded border border-rose-100 hidden xl:inline">
-                /
-              </kbd>
-            </button>
-
-            {/* Become Partner CTA Button */}
-            <Link
-              href="/distributor"
-              className="gradient-strawberry-btn inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-white text-xs font-black shadow-md hover:shadow-lg transition-all whitespace-nowrap shrink-0"
-            >
-              <Handshake className="w-3.5 h-3.5" />
-              <span>Become Partner</span>
-            </Link>
-          </div>
-
-          {/* Mobile Actions Toggle */}
-          <div className="flex lg:hidden items-center gap-1.5 shrink-0">
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2 rounded-full bg-white border border-rose-200 text-[#2A1220] hover:text-[#FF3366] transition-colors shadow-sm"
-              aria-label="Search"
-            >
-              <Search className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-full bg-white border border-rose-200 text-[#2A1220] hover:text-[#FF3366] transition-colors shadow-sm"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-            </button>
           </div>
         </div>
 
-        {/* Mobile Slide-down Menu */}
+        {/* Mobile / Slide-down Menu Drawer */}
         {isMobileMenuOpen && (
-          <div className="pointer-events-auto mt-2 bg-[#FFF5F7] border-2 border-rose-200 rounded-[28px] shadow-2xl p-5 space-y-3 animate-fadeIn">
+          <div className="absolute top-full left-0 right-0 bg-[#FFF9F2] border-b-2 border-orange-200 shadow-2xl px-6 py-6 space-y-4 animate-fadeIn">
             <div className="space-y-1">
-              {navigationLinks.map((item) => {
+              {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.title}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-2xl font-black text-sm transition-colors whitespace-nowrap ${
+                    className={`flex items-center justify-between px-4 py-3 rounded-2xl font-bold text-sm transition-colors ${
                       isActive
-                        ? 'bg-[#FF3366] text-white shadow-sm'
-                        : 'text-[#2A1220] hover:bg-rose-100/70'
+                        ? 'bg-[#FF8A00] text-white font-black'
+                        : 'text-[#14213D] hover:bg-orange-100/70'
                     }`}
                   >
                     <span>{item.title}</span>
-                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 );
               })}
             </div>
 
-            <div className="pt-3 border-t border-rose-200 space-y-2">
-              <Link
-                href="/distributor"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="gradient-strawberry-btn w-full flex items-center justify-center gap-2 py-3 rounded-2xl text-white font-black text-xs shadow-md"
-              >
-                <Handshake className="w-4 h-4" />
-                <span>Become a Distributor</span>
-              </Link>
-              <Link
-                href="/store-locator"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl bg-white border border-rose-200 text-[#2A1220] font-black text-xs shadow-sm hover:bg-rose-50"
-              >
-                <MapPin className="w-4 h-4 text-[#FF3366]" />
-                <span>Find Nearby Store</span>
-              </Link>
+            <div className="pt-2 border-t border-orange-200 grid grid-cols-2 gap-2">
+              {productCategories.map((cat) => (
+                <Link
+                  key={cat.name}
+                  href={cat.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-3 py-2 text-xs font-bold text-center bg-white rounded-xl border border-orange-100 text-[#14213D] hover:border-[#FF8A00]"
+                >
+                  {cat.name}
+                </Link>
+              ))}
             </div>
           </div>
         )}
