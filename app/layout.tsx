@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#FF8A00',
+  themeColor: '#FF3366',
   width: 'device-width',
   initialScale: 1,
 };
@@ -65,9 +65,12 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   }
 };
 
@@ -78,7 +81,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} font-sans bg-[#FFF9F2] text-[#14213D] antialiased selection:bg-[#FFE5B4] selection:text-[#FF8A00]`}>
+      <body className={`${poppins.variable} font-sans bg-[#FFF5F7] text-[#2A1220] antialiased selection:bg-[#FFE0E8] selection:text-[#FF3366]`}>
         <Navbar />
         <main className="min-h-screen">
           {children}
