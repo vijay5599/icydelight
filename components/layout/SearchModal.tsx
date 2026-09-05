@@ -118,12 +118,11 @@ export function SearchModal({ isOpen, onClose, onSelectProduct }: SearchModalPro
                 className="group flex items-center justify-between p-3 rounded-2xl hover:bg-[#FFF9F2] transition-colors border border-transparent hover:border-orange-100"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-orange-50 shrink-0 border border-orange-100">
-                    <Image
+                  <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-orange-50 shrink-0 border border-orange-100 flex items-center justify-center p-1">
+                    <img
                       src={product.image}
                       alt={product.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div>

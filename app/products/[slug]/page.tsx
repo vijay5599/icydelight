@@ -88,13 +88,11 @@ export default async function ProductDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left: Product Visual */}
             <div className="lg:col-span-6 relative">
-              <div className="relative w-full h-80 sm:h-[420px] lg:h-[480px] rounded-[30px] overflow-hidden bg-gradient-to-br from-[#FFF9F2] to-orange-50 border-4 border-[#FFF9F2] shadow-xl">
-                <Image
+              <div className="relative w-full h-80 sm:h-[420px] lg:h-[480px] rounded-[30px] overflow-hidden bg-gradient-to-br from-[#FFF9F2] via-orange-50/70 to-amber-100/40 border-4 border-[#FFF9F2] shadow-xl flex items-center justify-center p-6">
+                <img
                   src={product.image}
                   alt={product.name}
-                  fill
-                  priority
-                  className="object-cover"
+                  className="max-h-full max-w-full object-contain mx-auto drop-shadow-lg"
                 />
                 {product.badge && (
                   <div className="absolute top-5 left-5 z-10 px-4 py-1.5 rounded-full bg-[#FF8A00] text-white text-xs font-black uppercase tracking-wider shadow-md">

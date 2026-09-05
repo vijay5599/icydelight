@@ -65,24 +65,25 @@ export function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps
         </button>
 
         {/* Left Side: Large Product Visual */}
-        <div className="md:w-1/2 relative bg-gradient-to-br from-[#FFF9F2] via-orange-50 to-amber-100/50 p-8 flex flex-col items-center justify-center min-h-[260px] md:min-h-full">
+        <div className="md:w-1/2 relative bg-gradient-to-br from-[#FFF9F2] via-orange-50/70 to-amber-100/40 p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] md:min-h-full overflow-hidden">
           {product.badge && (
-            <div className="absolute top-5 left-5 z-10 px-3.5 py-1 rounded-full bg-[#FF8A00] text-white text-xs font-bold shadow-sm">
+            <div className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-[#FF8A00] text-white text-xs font-black shadow-md tracking-wide">
               {product.badge}
             </div>
           )}
 
-          <div className="relative w-full h-56 md:h-72 rounded-2xl overflow-hidden shadow-lg border-2 border-white/80">
-            <Image
+          {/* Background Radial Glow */}
+          <div className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-orange-200/50 blur-2xl pointer-events-none" />
+
+          <div className="relative w-full h-64 sm:h-80 flex items-center justify-center p-3 z-10">
+            <img
               src={product.image}
               alt={product.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              className="max-h-full max-w-full object-contain mx-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.12)] transition-transform duration-300 hover:scale-105"
             />
           </div>
 
-          <div className="mt-4 flex items-center gap-2 text-xs font-bold text-gray-600 bg-white/80 px-3 py-1.5 rounded-full shadow-sm">
+          <div className="mt-4 flex items-center gap-2 text-xs font-bold text-gray-700 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-orange-100/80 z-10">
             <ShieldCheck className="w-4 h-4 text-emerald-500" />
             <span>100% Farm-Fresh Dairy & Real Fruits</span>
           </div>

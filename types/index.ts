@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: 'ice-candy' | 'cups' | 'chocobars' | 'cones' | 'sundaes' | 'family-packs' | 'ice-pops';
+  category: 'ice-candy' | 'cups' | 'chocobars' | 'cones' | 'sundaes' | 'family-packs' | 'kulfi' | 'ice-pops';
   categoryLabel: string;
   flavor: string;
   tagline: string;
