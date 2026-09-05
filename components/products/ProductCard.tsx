@@ -26,11 +26,11 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
       </div>
 
       {/* Image Container with Hover Quick View */}
-      <div className="relative w-full h-52 sm:h-56 rounded-[1.5rem] overflow-hidden bg-gradient-to-b from-[#FFF9F2] to-orange-50/60 mb-4 flex items-center justify-center">
+      <div className="relative w-full h-52 sm:h-60 rounded-3xl overflow-hidden bg-gradient-to-b from-[#FFF9F2] to-orange-50/60 mb-4 flex items-center justify-center p-3">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+          className="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
           loading="lazy"
         />
 
