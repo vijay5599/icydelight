@@ -109,12 +109,9 @@ export function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps
           </div>
 
           <div className="flex items-baseline gap-3 pb-3 border-b border-gray-100">
-            <span className="text-3xl font-black text-[#14213D]">${product.price.toFixed(2)}</span>
-            {product.originalPrice && (
-              <span className="text-base font-semibold text-gray-400 line-through">
-                ${product.originalPrice.toFixed(2)}
-              </span>
-            )}
+            <span className="text-3xl font-black text-[#FF8A00]">
+              {product.priceDisplay || 'XX Rs'}
+            </span>
             <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
               In Stock at Parlours
             </span>

@@ -10,61 +10,61 @@ export function FeaturedProductsSection() {
       id: 'ice-candy-orange',
       name: 'Ice Candy Orange',
       category: 'Ice Candy',
-      flavor: 'Orange',
-      price: '₹10',
+      flavor: 'Orange Candy',
+      price: 'XX Rs',
       bgColor: '#FFEBD4',
-      image: 'https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=500&q=80',
-      slug: 'zesty-orange-ice-candy'
+      image: '/images/products/ice-candy-orange.png',
+      slug: 'ice-candy-orange'
     },
     {
       id: 'ice-candy-mango',
       name: 'Ice Candy Mango',
       category: 'Ice Candy',
-      flavor: 'Mango',
-      price: '₹10',
+      flavor: 'Mango Candy',
+      price: 'XX Rs',
       bgColor: '#FFF5CC',
-      image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=500&q=80',
-      slug: 'alphonso-mango-passion-cup'
+      image: '/images/products/ice-candy-mango.png',
+      slug: 'ice-candy-mango'
     },
     {
-      id: 'chocobar-choco-crunch',
-      name: 'Chocobar Choco Crunch',
+      id: 'mini-chocobar',
+      name: 'Mini Chocobar Crunch',
       category: 'Chocobar',
       flavor: 'Choco Crunch',
-      price: '₹15',
+      price: 'XX Rs',
       bgColor: '#F5EBE6',
-      image: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&w=500&q=80',
-      slug: 'belgian-truffle-chocobar'
+      image: '/images/products/mini-chocobar.png',
+      slug: 'mini-chocobar'
     },
     {
-      id: 'cup-belgian-chocolate',
-      name: 'Cup Belgian Chocolate',
-      category: 'Cup',
-      flavor: 'Belgian Chocolate',
-      price: '₹25',
-      bgColor: '#EFEAE6',
-      image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80',
-      slug: 'espresso-brownie-chocobar'
+      id: 'mava-kulfi',
+      name: 'Mava Kulfi Royal Box',
+      category: 'Kulfi',
+      flavor: 'Mava Kulfi',
+      price: 'XX Rs',
+      bgColor: '#E6F8F2',
+      image: '/images/products/mava-kulfi.png',
+      slug: 'mava-kulfi'
     },
     {
-      id: 'cup-strawberry-rush',
+      id: 'strawberry-cup',
       name: 'Cup Strawberry Rush',
       category: 'Cup',
-      flavor: 'Strawberry Rush',
-      price: '₹25',
+      flavor: 'Strawberry Cup',
+      price: 'XX Rs',
       bgColor: '#FCEAEF',
-      image: 'https://images.unsplash.com/photo-1549395156-e0c1fe6fc7a5?auto=format&fit=crop&w=500&q=80',
-      slug: 'frostberry-bliss-cone'
+      image: '/images/products/strawberry-cup.png',
+      slug: 'strawberry-cup'
     },
     {
-      id: 'cone-american-nuts',
-      name: 'Cone American Nuts',
+      id: 'chocolate-cone',
+      name: 'Double Chocolate Cone',
       category: 'Cone',
-      flavor: 'American Nuts',
-      price: '₹20',
+      flavor: 'Choco Cone',
+      price: 'XX Rs',
       bgColor: '#FFF0DB',
-      image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=500&q=80',
-      slug: 'triple-chocolate-cone'
+      image: '/images/products/chocolate-cone.png',
+      slug: 'chocolate-cone'
     }
   ];
 
@@ -90,13 +90,13 @@ export function FeaturedProductsSection() {
             >
               {/* Colored Card Image Box */}
               <div 
-                className="w-full h-36 sm:h-44 rounded-2xl flex items-center justify-center p-3 relative overflow-hidden mb-3"
+                className="w-full h-36 sm:h-44 rounded-2xl flex items-center justify-center p-2 relative overflow-hidden mb-3"
                 style={{ backgroundColor: item.bgColor }}
               >
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500 ease-out shadow-sm"
+                  className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-500 ease-out"
                   loading="lazy"
                 />
               </div>
@@ -113,7 +113,7 @@ export function FeaturedProductsSection() {
                 </div>
 
                 {/* Orange Price Badge */}
-                <span className="text-[11px] sm:text-xs font-black bg-[#FF8A00] text-white px-2.5 py-1 rounded-lg shrink-0 shadow-sm">
+                <span className="text-[10px] sm:text-[11px] font-black bg-[#FF8A00] text-white px-2 py-1 rounded-lg shrink-0 shadow-sm whitespace-nowrap">
                   {item.price}
                 </span>
               </div>

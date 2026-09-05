@@ -79,12 +79,9 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         {/* Bottom Bar: Price & Action */}
         <div className="pt-4 mt-3 border-t border-orange-100/80 flex items-center justify-between">
           <div className="flex items-baseline gap-1.5">
-            <span className="text-xl font-black text-[#14213D]">${product.price.toFixed(2)}</span>
-            {product.originalPrice && (
-              <span className="text-xs font-bold text-gray-400 line-through">
-                ${product.originalPrice.toFixed(2)}
-              </span>
-            )}
+            <span className="text-lg sm:text-xl font-black text-[#FF8A00]">
+              {product.priceDisplay || 'XX Rs'}
+            </span>
           </div>
 
           <Link

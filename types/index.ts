@@ -7,6 +7,7 @@ export interface Product {
   flavor: string;
   tagline: string;
   price: number;
+  priceDisplay?: string;
   originalPrice?: number;
   rating: number;
   reviewsCount: number;
