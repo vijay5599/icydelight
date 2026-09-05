@@ -26,14 +26,8 @@ export function CategorySection() {
     {
       name: 'Cones',
       slug: 'cones',
-      image: '/images/products/chocolate-cone.png',
-      emoji: '🍦'
-    },
-    {
-      name: 'Family Packs',
-      slug: 'family-packs',
       image: '/images/products/family-pack-tub.png',
-      emoji: '🍧'
+      emoji: '🍦'
     },
     {
       name: 'Sundaes',
@@ -53,7 +47,7 @@ export function CategorySection() {
     <section className="relative z-20 -mt-8 sm:-mt-12 lg:-mt-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Floating White Category Bar */}
       <div className="bg-white rounded-[28px] sm:rounded-[36px] shadow-[0_12px_40px_rgba(0,0,0,0.08)] border border-orange-100/80 p-4 sm:p-6 lg:p-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 items-center">
           {categoryItems.map((item) => (
             <Link
               key={item.name}

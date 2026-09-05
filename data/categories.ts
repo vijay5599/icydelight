@@ -50,22 +50,11 @@ export const categories: Category[] = [
     name: 'Waffle Cones',
     slug: 'cones',
     description: 'Freshly baked waffle cones loaded with creamy swirls and crunchy nut crowns.',
-    image: '/images/products/chocolate-cone.png',
-    itemCount: 2,
+    image: '/images/products/family-pack-tub.png',
+    itemCount: 3,
     accentColor: '#D97706',
     lightBg: '#FEF3C7',
     badge: 'Bestseller'
-  },
-  {
-    id: 'family-packs',
-    name: 'Family Tubs',
-    slug: 'family-packs',
-    description: 'Generous 700ml & 1.2L tubs designed to make celebrations unforgettable.',
-    image: '/images/products/family-pack-tub.png',
-    itemCount: 1,
-    accentColor: '#3F51B5',
-    lightBg: '#E8EAF6',
-    badge: 'Value Tub'
   },
   {
     id: 'sundaes',

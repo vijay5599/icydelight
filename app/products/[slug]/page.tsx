@@ -180,18 +180,18 @@ export default async function ProductDetailPage({ params }: Props) {
               )}
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <div className="pt-4 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/store-locator"
-                  className="gradient-orange-btn w-full sm:w-auto px-8 py-4 rounded-full text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all"
+                  className="gradient-orange-btn w-full sm:w-auto px-8 py-4 rounded-full bg-[#FF8A00] hover:bg-[#E67600] text-white font-extrabold text-sm flex items-center justify-center gap-2.5 shadow-[0_6px_20px_rgba(255,138,0,0.4)] hover:shadow-[0_8px_25px_rgba(255,138,0,0.55)] hover:-translate-y-0.5 transition-all"
                 >
-                  <StoreIcon className="w-4 h-4" />
-                  <span>Find in Nearby Parlour</span>
+                  <StoreIcon className="w-5 h-5 text-white" />
+                  <span className="text-white font-black tracking-wide">Find in Nearby Parlour</span>
                 </Link>
 
                 <Link
                   href="/distributor"
-                  className="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-orange-50 border-2 border-orange-200 text-[#14213D] font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+                  className="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-orange-50/80 border-2 border-orange-200 text-[#14213D] font-bold text-sm flex items-center justify-center gap-2 hover:border-[#FF8A00] transition-all shadow-sm"
                 >
                   <Building className="w-4 h-4 text-[#FF8A00]" />
                   <span>Wholesale / Party Inquiry</span>
