@@ -42,10 +42,10 @@ export function CategorySection() {
       emoji: '🍒'
     },
     {
-      name: 'Ice Pops',
-      slug: 'ice-pops',
+      name: 'Traditional Kulfis',
+      slug: 'kulfi',
       image: '/images/products/mava-kulfi.png',
-      emoji: '🍓'
+      emoji: '🍮'
     }
   ];
 
