@@ -50,7 +50,7 @@ export function HeroSection() {
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#14213D] tracking-tight leading-[0.95]">
                 Life is Better
               </h1>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[#FF8A00] via-[#FFA726] to-[#E11D48] bg-clip-text text-transparent tracking-tight leading-[0.95]">
+              <h1 className="pb-2.5 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[#FF8A00] via-[#FFA726] to-[#E11D48] bg-clip-text text-transparent tracking-tight leading-[0.95]">
                 With IcyDelight
               </h1>
             </motion.div>
