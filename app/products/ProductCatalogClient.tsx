@@ -23,7 +23,7 @@ export function ProductCatalogClient() {
 
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<'popular' | 'price-low' | 'price-high' | 'rating'>('popular');
+  const [sortBy, setSortBy] = useState<'popular' | 'rating' | 'name-asc' | 'name-desc'>('popular');
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
   useEffect(() => {
@@ -53,11 +53,11 @@ export function ProductCatalogClient() {
 
     // Sorting
     switch (sortBy) {
-      case 'price-low':
-        list.sort((a, b) => a.price - b.price);
+      case 'name-asc':
+        list.sort((a, b) => a.name.localeCompare(b.name));
         break;
-      case 'price-high':
-        list.sort((a, b) => b.price - a.price);
+      case 'name-desc':
+        list.sort((a, b) => b.name.localeCompare(a.name));
         break;
       case 'rating':
         list.sort((a, b) => b.rating - a.rating);
@@ -101,8 +101,8 @@ export function ProductCatalogClient() {
             >
               <option value="popular">Most Popular & Bestsellers</option>
               <option value="rating">Highest Rated (★)</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
+              <option value="name-asc">Alphabetical (A to Z)</option>
+              <option value="name-desc">Alphabetical (Z to A)</option>
             </select>
           </div>
         </div>

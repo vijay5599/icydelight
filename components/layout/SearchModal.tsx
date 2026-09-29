@@ -92,7 +92,7 @@ export function SearchModal({ isOpen, onClose, onSelectProduct }: SearchModalPro
           <span className="flex items-center gap-1 text-[#FF8A00] shrink-0">
             <Sparkles className="w-3.5 h-3.5" /> Popular:
           </span>
-          {['Belgian Truffle', 'FrostBerry', 'Alphonso Mango', 'Salted Caramel', 'Ice Pops'].map((tag) => (
+          {['Mango Dolly', 'Raspberry Dolly', 'Almond Bar', 'Kesar Pista', 'Chocolate Pistachio'].map((tag) => (
             <button
               key={tag}
               onClick={() => setQuery(tag)}
@@ -109,7 +109,7 @@ export function SearchModal({ isOpen, onClose, onSelectProduct }: SearchModalPro
             <div className="text-center py-12">
               <IceCream className="w-12 h-12 text-orange-300 mx-auto mb-3 animate-bounce" />
               <p className="text-base font-bold text-[#14213D]">No icy treats found for &quot;{query}&quot;</p>
-              <p className="text-sm text-gray-500 mt-1">Try searching for &quot;Mango&quot;, &quot;Chocobar&quot;, or &quot;Cone&quot;</p>
+              <p className="text-sm text-gray-500 mt-1">Try searching for &quot;Mango&quot;, &quot;Chocobar&quot;, or &quot;Kulfi&quot;</p>
             </div>
           ) : (
             results.map((product) => (
@@ -148,11 +148,10 @@ export function SearchModal({ isOpen, onClose, onSelectProduct }: SearchModalPro
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-base font-extrabold text-[#14213D]">${product.price.toFixed(2)}</span>
                   <Link
                     href={`/products/${product.slug}`}
                     onClick={onClose}
-                    className="p-2 rounded-full bg-orange-50 text-[#FF8A00] group-hover:bg-[#FF8A00] group-hover:text-white transition-all shadow-sm"
+                    className="p-2.5 rounded-full bg-orange-50 text-[#FF8A00] group-hover:bg-[#FF8A00] group-hover:text-white transition-all shadow-sm"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </Link>

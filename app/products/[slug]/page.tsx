@@ -132,16 +132,11 @@ export default async function ProductDetailPage({ params }: Props) {
                 <p className="text-sm text-gray-500 font-medium italic mt-1">{product.tagline}</p>
               </div>
 
-              {/* Price Row */}
-              <div className="flex items-baseline gap-3 pb-4 border-b border-gray-100">
-                <span className="text-4xl font-black text-[#14213D]">${product.price.toFixed(2)}</span>
-                {product.originalPrice && (
-                  <span className="text-lg font-bold text-gray-400 line-through">
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
-                )}
-                <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                  Available in 250+ Outlets
+              {/* In-Store Availability Row */}
+              <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
+                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-4 py-2 rounded-full border border-emerald-200 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Available in 250+ Retail Parlours & Authorized Outlets
                 </span>
               </div>
 

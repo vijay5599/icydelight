@@ -8,38 +8,38 @@ export function CategorySection() {
     {
       name: 'Ice Candy',
       slug: 'ice-candy',
-      image: '/images/products/ice-candy-orange.png',
-      emoji: '🍊'
+      image: '/images/products/mango-dolly.png',
+      emoji: '🥭'
     },
     {
-      name: 'Cups',
+      name: 'Chocobars',
+      slug: 'chocobars',
+      image: '/images/products/almond-bar.png',
+      emoji: '🍫'
+    },
+    {
+      name: 'Traditional Kulfi',
+      slug: 'kulfi',
+      image: '/images/products/kesar-pista-box.png',
+      emoji: '🍮'
+    },
+    {
+      name: 'Classic Cups',
       slug: 'cups',
       image: '/images/products/strawberry-cup.png',
       emoji: '🍨'
     },
     {
-      name: 'Chocobars',
-      slug: 'chocobars',
-      image: '/images/products/mini-chocobar.png',
-      emoji: '🍫'
-    },
-    {
-      name: 'Cones',
+      name: 'Waffle Cones',
       slug: 'cones',
-      image: '/images/products/family-pack-tub.png',
+      image: '/images/products/chocolate-cone.png',
       emoji: '🍦'
     },
     {
-      name: 'Sundaes',
+      name: 'Sundaes & Slices',
       slug: 'sundaes',
       image: '/images/products/cassata-slice.png',
       emoji: '🍒'
-    },
-    {
-      name: 'Traditional Kulfis',
-      slug: 'kulfi',
-      image: '/images/products/mava-kulfi.png',
-      emoji: '🍮'
     }
   ];
 

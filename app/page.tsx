@@ -13,7 +13,7 @@ export default function Home() {
       {/* 2. Overlapping 7-Category Horizontal Strip */}
       <CategorySection />
 
-      {/* 3. Our Featured Products (6-Card Grid with Price Tags) */}
+      {/* 3. Our Featured Products (6-Card Grid) */}
       <FeaturedProductsSection />
 
       {/* 4. Why Choose IcyDelight? (4 Horizontal Features) */}

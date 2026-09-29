@@ -26,7 +26,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
       </div>
 
       {/* Image Container with Hover Quick View */}
-      <div className="relative w-full h-52 sm:h-60 rounded-3xl overflow-hidden bg-gradient-to-b from-[#FFF9F2] to-orange-50/60 mb-4 flex items-center justify-center p-3">
+      <div className="relative w-full h-56 sm:h-64 rounded-3xl overflow-hidden bg-gradient-to-b from-[#FFF9F2] to-orange-50/60 mb-4 flex items-center justify-center p-3">
         <img
           src={product.image}
           alt={product.name}
@@ -76,17 +76,18 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
           </p>
         </div>
 
-        {/* Bottom Bar: Price & Action */}
+        {/* Bottom Bar: Explore & Action */}
         <div className="pt-4 mt-3 border-t border-orange-100/80 flex items-center justify-between">
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-lg sm:text-xl font-black text-[#FF8A00]">
-              {product.priceDisplay || 'XX Rs'}
-            </span>
-          </div>
+          <Link
+            href={`/products/${product.slug}`}
+            className="text-xs font-extrabold text-[#FF8A00] group-hover:text-[#E67600] flex items-center gap-1 transition-colors"
+          >
+            <span>Explore Treat</span>
+          </Link>
 
           <Link
             href={`/products/${product.slug}`}
-            className="p-2.5 rounded-full bg-[#FFF9F2] hover:bg-[#FF8A00] text-[#FF8A00] hover:text-white transition-all duration-200 shadow-sm"
+            className="p-2.5 rounded-full bg-[#FFF9F2] group-hover:bg-[#FF8A00] text-[#FF8A00] group-hover:text-white transition-all duration-200 shadow-sm"
             aria-label={`Explore ${product.name}`}
           >
             <ArrowRight className="w-4 h-4" />

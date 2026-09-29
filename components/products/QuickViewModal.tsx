@@ -10,9 +10,7 @@ import {
   ShieldCheck, 
   Flame, 
   ArrowRight, 
-  Check, 
-  Layers, 
-  AlertTriangle 
+  Store
 } from 'lucide-react';
 import { Product } from '@/types';
 
@@ -109,12 +107,10 @@ export function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps
             <p className="text-sm font-semibold text-[#FF8A00] mt-1">{product.flavor}</p>
           </div>
 
-          <div className="flex items-baseline gap-3 pb-3 border-b border-gray-100">
-            <span className="text-3xl font-black text-[#FF8A00]">
-              {product.priceDisplay || 'XX Rs'}
-            </span>
-            <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-              In Stock at Parlours
+          <div className="flex items-center gap-2 pb-3 border-b border-gray-100">
+            <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-full flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Available at 250+ Parlours & Stores
             </span>
           </div>
 
@@ -126,7 +122,7 @@ export function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps
           {product.packSizes && product.packSizes.length > 0 && (
             <div>
               <label className="text-xs font-bold text-gray-700 uppercase tracking-wider block mb-2">
-                Select Pack Size:
+                Available Formats:
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {product.packSizes.map((size) => (
@@ -187,6 +183,7 @@ export function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps
               onClick={onClose}
               className="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-[#FFF9F2] hover:bg-orange-100 border border-orange-200 text-[#14213D] font-bold text-xs text-center flex items-center justify-center gap-1.5 transition-colors"
             >
+              <Store className="w-4 h-4 text-[#FF8A00]" />
               <span>Locate Parlour</span>
             </Link>
           </div>

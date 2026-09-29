@@ -10,7 +10,8 @@ import {
   ArrowRight, 
   Pause, 
   Play,
-  Award
+  Award,
+  Store
 } from 'lucide-react';
 import { products } from '@/data/products';
 
@@ -94,11 +95,11 @@ export function BestSellersSlider() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
               {/* Product Visual with Sticker Border */}
               <div className="lg:col-span-6 relative flex items-center justify-center order-2 lg:order-1">
-                <div className="relative w-full max-w-md h-72 sm:h-96 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+                <div className="relative w-full max-w-md h-72 sm:h-96 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-white/60 flex items-center justify-center p-6">
                   <img
                     src={currentProduct.image}
                     alt={currentProduct.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="max-h-full max-w-full object-contain transition-transform duration-700 hover:scale-105 drop-shadow-md"
                     loading="eager"
                   />
                   <div className="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-[#FF8A00] text-white text-xs font-black uppercase tracking-wider shadow-md">
@@ -139,17 +140,8 @@ export function BestSellersSlider() {
                   </p>
                 </div>
 
-                {/* Pricing & Chunky Action CTAs */}
+                {/* Chunky Action CTAs */}
                 <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-black text-[#14213D]">${currentProduct.price.toFixed(2)}</span>
-                    {currentProduct.originalPrice && (
-                      <span className="text-base font-semibold text-gray-400 line-through">
-                        ${currentProduct.originalPrice.toFixed(2)}
-                      </span>
-                    )}
-                  </div>
-
                   <Link
                     href={`/products/${currentProduct.slug}`}
                     className="btn-chunky-primary px-7 py-3.5 rounded-2xl text-white font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 group"
@@ -160,9 +152,10 @@ export function BestSellersSlider() {
 
                   <Link
                     href="/store-locator"
-                    className="btn-chunky-white px-6 py-3.5 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-wider"
+                    className="btn-chunky-white px-6 py-3.5 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-1.5"
                   >
-                    Find in Store
+                    <Store className="w-4 h-4 text-[#FF8A00]" />
+                    <span>Find in Store</span>
                   </Link>
                 </div>
               </div>

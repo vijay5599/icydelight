@@ -6,8 +6,8 @@ export const categories: Category[] = [
     name: 'Ice Candies',
     slug: 'ice-candy',
     description: '100% Real fruit pulps frozen on a stick for that refreshing cooling nostalgia.',
-    image: '/images/products/ice-candy-orange.png',
-    itemCount: 2,
+    image: '/images/products/mango-dolly.png',
+    itemCount: 3,
     accentColor: '#FF8A00',
     lightBg: '#FFF3E0',
     badge: 'Real Fruit'
@@ -17,8 +17,8 @@ export const categories: Category[] = [
     name: 'Traditional Kulfis',
     slug: 'kulfi',
     description: 'Slow-simmered desi rabdi kulfis, saffron sticks, and royal prism boxes.',
-    image: '/images/products/mava-kulfi.png',
-    itemCount: 4,
+    image: '/images/products/kesar-pista-box.png',
+    itemCount: 2,
     accentColor: '#059669',
     lightBg: '#E6F8F2',
     badge: 'Desi Heritage'
@@ -28,8 +28,8 @@ export const categories: Category[] = [
     name: 'Chocobars',
     slug: 'chocobars',
     description: 'Crispy Belgian couverture chocolate shells wrapped around velvety dairy ice cream.',
-    image: '/images/products/mini-chocobar.png',
-    itemCount: 2,
+    image: '/images/products/almond-bar.png',
+    itemCount: 3,
     accentColor: '#5D4037',
     lightBg: '#F5EBE6',
     badge: 'Classic'
@@ -40,7 +40,7 @@ export const categories: Category[] = [
     slug: 'cups',
     description: 'Pure artisanal churned ice cream in convenient spoon-in-lid single-serve tubs.',
     image: '/images/products/strawberry-cup.png',
-    itemCount: 5,
+    itemCount: 4,
     accentColor: '#FF4B72',
     lightBg: '#FFF8E1',
     badge: 'Everyday Joy'

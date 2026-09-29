@@ -2,69 +2,69 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function FeaturedProductsSection() {
   const featuredList = [
     {
-      id: 'ice-candy-orange',
-      name: 'Ice Candy Orange',
+      id: 'mango-dolly',
+      name: 'Mango Dolly',
       category: 'Ice Candy',
-      flavor: 'Orange Candy',
-      price: 'XX Rs',
-      bgColor: '#FFEBD4',
-      image: '/images/products/ice-candy-orange.png',
-      slug: 'ice-candy-orange'
-    },
-    {
-      id: 'ice-candy-mango',
-      name: 'Ice Candy Mango',
-      category: 'Ice Candy',
-      flavor: 'Mango Candy',
-      price: 'XX Rs',
+      flavor: 'Alphonso Mango',
+      tag: '100% Real Mango',
       bgColor: '#FFF5CC',
-      image: '/images/products/ice-candy-mango.png',
-      slug: 'ice-candy-mango'
+      image: '/images/products/mango-dolly.png',
+      slug: 'mango-dolly'
     },
     {
-      id: 'mini-chocobar',
-      name: 'Mini Chocobar Crunch',
-      category: 'Chocobar',
-      flavor: 'Choco Crunch',
-      price: 'XX Rs',
+      id: 'raspberry-dolly',
+      name: 'Raspberry Dolly',
+      category: 'Ice Candy',
+      flavor: 'Wild Raspberry',
+      tag: 'Berry Delight',
+      bgColor: '#FFE4EC',
+      image: '/images/products/raspberry-dolly.png',
+      slug: 'raspberry-dolly'
+    },
+    {
+      id: 'almond-bar',
+      name: 'Almond Bar Box',
+      category: 'Chocobars',
+      flavor: 'Roasted Almonds',
+      tag: 'Gourmet Box',
       bgColor: '#F5EBE6',
-      image: '/images/products/mini-chocobar.png',
-      slug: 'mini-chocobar'
+      image: '/images/products/almond-bar.png',
+      slug: 'almond-bar'
     },
     {
-      id: 'mava-kulfi',
+      id: 'chocolate-pistachio',
+      name: 'Chocolate Pistachio',
+      category: 'Chocobars',
+      flavor: 'Pistachio Choco',
+      tag: 'Nutty Crunch',
+      bgColor: '#F7FEE7',
+      image: '/images/products/chocolate-pistachio.png',
+      slug: 'chocolate-pistachio'
+    },
+    {
+      id: 'kesar-pista-box',
+      name: 'Kesar Pista Kulfi',
+      category: 'Kulfi',
+      flavor: 'Kashmiri Saffron',
+      tag: 'Royal Kulfi',
+      bgColor: '#FEF3C7',
+      image: '/images/products/kesar-pista-box.png',
+      slug: 'kesar-pista-box'
+    },
+    {
+      id: 'mava-kulfi-prism',
       name: 'Mava Kulfi Royal Box',
       category: 'Kulfi',
-      flavor: 'Mava Kulfi',
-      price: 'XX Rs',
+      flavor: 'Desi Rabdi',
+      tag: 'Prism Royal',
       bgColor: '#E6F8F2',
-      image: '/images/products/mava-kulfi.png',
-      slug: 'mava-kulfi'
-    },
-    {
-      id: 'strawberry-cup',
-      name: 'Cup Strawberry Rush',
-      category: 'Cup',
-      flavor: 'Strawberry Cup',
-      price: 'XX Rs',
-      bgColor: '#FCEAEF',
-      image: '/images/products/strawberry-cup.png',
-      slug: 'strawberry-cup'
-    },
-    {
-      id: 'chocolate-cone',
-      name: 'Double Chocolate Cone',
-      category: 'Cone',
-      flavor: 'Choco Cone',
-      price: 'XX Rs',
-      bgColor: '#FFF0DB',
-      image: '/images/products/chocolate-cone.png',
-      slug: 'chocolate-cone'
+      image: '/images/products/mava-kulfi-prism.png',
+      slug: 'mava-kulfi-prism'
     }
   ];
 
@@ -73,6 +73,10 @@ export function FeaturedProductsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header with orange underline */}
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-[#FF8A00] text-xs font-bold uppercase tracking-wider mb-2">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Artisanal Creations</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl font-black text-[#14213D] tracking-tight">
             Our Featured Products
           </h2>
@@ -90,32 +94,30 @@ export function FeaturedProductsSection() {
             >
               {/* Colored Card Image Box */}
               <div 
-                className="w-full h-36 sm:h-44 rounded-2xl flex items-center justify-center p-2 relative overflow-hidden mb-3"
+                className="w-full h-40 sm:h-48 rounded-2xl flex items-center justify-center p-2 relative overflow-hidden mb-3"
                 style={{ backgroundColor: item.bgColor }}
               >
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-500 ease-out"
+                  className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-500 ease-out drop-shadow-sm"
                   loading="lazy"
                 />
               </div>
 
-              {/* Title & Price Row */}
-              <div className="flex items-end justify-between gap-1 pt-1">
-                <div>
+              {/* Title & Badge Row */}
+              <div className="flex flex-col gap-1 pt-1">
+                <div className="flex items-center justify-between gap-1">
                   <span className="text-[10px] font-bold text-gray-400 block uppercase">
                     {item.category}
                   </span>
-                  <h3 className="text-xs sm:text-sm font-bold text-[#14213D] group-hover:text-[#FF8A00] transition-colors line-clamp-1">
-                    {item.flavor}
-                  </h3>
+                  <span className="text-[9px] font-bold text-[#FF8A00] bg-orange-50 px-1.5 py-0.5 rounded-md border border-orange-100/60 whitespace-nowrap">
+                    {item.tag}
+                  </span>
                 </div>
-
-                {/* Orange Price Badge */}
-                <span className="text-[10px] sm:text-[11px] font-black bg-[#FF8A00] text-white px-2 py-1 rounded-lg shrink-0 shadow-sm whitespace-nowrap">
-                  {item.price}
-                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-[#14213D] group-hover:text-[#FF8A00] transition-colors line-clamp-1">
+                  {item.flavor}
+                </h3>
               </div>
             </Link>
           ))}
