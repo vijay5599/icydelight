@@ -2,7 +2,8 @@ import { HeroSection } from '@/components/hero/HeroSection';
 import { CategorySection } from '@/components/categories/CategorySection';
 import { FeaturedProductsSection } from '@/components/home/FeaturedProductsSection';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
-import { DistributorBanner } from '@/components/home/DistributorBanner';
+import { Testimonials } from '@/components/home/Testimonials';
+// import { DistributorBanner } from '@/components/home/DistributorBanner';
 
 export default function Home() {
   return (
@@ -19,8 +20,11 @@ export default function Home() {
       {/* 4. Why Choose IcyDelight? (4 Horizontal Features) */}
       <WhyChooseUs />
 
-      {/* 5. Become Our Distributor (Wave Banner with Perks & Dual Action Buttons) */}
-      <DistributorBanner />
+      {/* 5. Customer Reviews & Testimonials */}
+      <Testimonials />
+
+      {/* Distributor section commented out */}
+      {/* <DistributorBanner /> */}
     </>
   );
 }

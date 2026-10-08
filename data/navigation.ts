@@ -7,7 +7,7 @@ export const navigationLinks: NavItem[] = [
   { title: 'Home', href: '/' },
   { title: 'Products', href: '/products' },
   { title: 'About', href: '/about' },
-  { title: 'Distributor', href: '/distributor' },
+  // { title: 'Distributor', href: '/distributor' },
   { title: 'Store Locator', href: '/store-locator' },
   { title: 'Contact', href: '/contact' }
 ];
@@ -28,12 +28,12 @@ export const footerNavigation = {
     { title: 'Real Fruit Pops', href: '/products?category=ice-pops' },
     { title: 'Family Packs', href: '/products?category=family-packs' }
   ],
-  partnerships: [
-    { title: 'Become a Distributor', href: '/distributor' },
-    { title: 'Retailer Network', href: '/distributor#retail' },
-    { title: 'Cold-Chain Logistics', href: '/distributor#cold-chain' },
-    { title: 'Download Brochure', href: '/distributor#brochure' }
-  ],
+  // partnerships: [
+  //   { title: 'Become a Distributor', href: '/distributor' },
+  //   { title: 'Retailer Network', href: '/distributor#retail' },
+  //   { title: 'Cold-Chain Logistics', href: '/distributor#cold-chain' },
+  //   { title: 'Download Brochure', href: '/distributor#brochure' }
+  // ],
   support: [
     { title: 'Store Locator', href: '/store-locator' },
     { title: 'Customer Care & FAQs', href: '/contact#faq' },

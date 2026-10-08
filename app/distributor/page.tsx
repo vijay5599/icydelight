@@ -1,3 +1,5 @@
+// Distributor page commented out as requested.
+/*
 import React from 'react';
 import type { Metadata } from 'next';
 import { PageHeader } from '@/components/shared/PageHeader';
@@ -22,4 +24,11 @@ export default function DistributorPage() {
       <DistributorFormClient />
     </>
   );
+}
+*/
+
+import { redirect } from 'next/navigation';
+
+export default function DistributorPage() {
+  redirect('/');
 }

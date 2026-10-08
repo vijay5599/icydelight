@@ -110,10 +110,10 @@ export default function RootLayout({
         slogan: 'Make your choice right !!',
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+91-1800-209-4499',
+          telephone: '+91-99237-84543',
           contactType: 'customer support',
           areaServed: 'IN',
-          availableLanguage: ['en', 'hi']
+          availableLanguage: ['en', 'hi', 'mr']
         },
         sameAs: [
           'https://instagram.com/icydelight_official',
@@ -139,14 +139,15 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className={`${poppins.variable} font-sans bg-[#FFF9F2] text-[#14213D] antialiased selection:bg-orange-100 selection:text-[#FF8A00]`}
+        suppressHydrationWarning
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className={`${poppins.variable} font-sans bg-[#FFF9F2] text-[#14213D] antialiased selection:bg-orange-100 selection:text-[#FF8A00]`}>
         <Navbar />
         <main className="min-h-screen">
           {children}

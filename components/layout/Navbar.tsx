@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  Search, 
-  Menu, 
-  X, 
+import {
+  Search,
+  Menu,
+  X,
   ChevronDown,
   ArrowRight
 } from 'lucide-react';
@@ -35,14 +35,14 @@ export function Navbar() {
 
   const navItems = [
     { title: 'Home', href: '/' },
-    { 
-      title: 'Products', 
+    {
+      title: 'Products',
       href: '/products',
-      hasDropdown: true 
+      hasDropdown: true
     },
     { title: 'About Us', href: '/about' },
-    { title: 'Distributor', href: '/distributor' },
-    { title: 'Store Locator', href: '/store-locator' },
+    // { title: 'Distributor', href: '/distributor' }, // Commented out as requested
+    // { title: 'Store Locator', href: '/store-locator' },
     { title: 'Contact Us', href: '/contact' }
   ];
 
@@ -59,11 +59,10 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'py-3 bg-[#FFF9F2]/95 backdrop-blur-md shadow-sm border-b border-orange-100'
-            : 'py-5 bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'py-3 bg-[#FFF9F2]/95 backdrop-blur-md shadow-sm border-b border-orange-100'
+          : 'py-5 bg-transparent'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -77,19 +76,18 @@ export function Navbar() {
 
                 if (item.hasDropdown) {
                   return (
-                    <div 
-                      key={item.title} 
+                    <div
+                      key={item.title}
                       className="relative"
                       onMouseEnter={() => setIsProductsDropdownOpen(true)}
                       onMouseLeave={() => setIsProductsDropdownOpen(false)}
                     >
                       <Link
                         href={item.href}
-                        className={`text-sm font-bold flex items-center gap-1 transition-colors py-2 ${
-                          isActive
-                            ? 'text-[#FF8A00] font-black border-b-2 border-[#FF8A00]'
-                            : 'text-[#14213D] hover:text-[#FF8A00]'
-                        }`}
+                        className={`text-sm font-bold flex items-center gap-1 transition-colors py-2 ${isActive
+                          ? 'text-[#FF8A00] font-black border-b-2 border-[#FF8A00]'
+                          : 'text-[#14213D] hover:text-[#FF8A00]'
+                          }`}
                       >
                         <span>{item.title}</span>
                         <ChevronDown className="w-3.5 h-3.5" />
@@ -117,11 +115,10 @@ export function Navbar() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className={`text-sm font-bold transition-all py-2 ${
-                      isActive
-                        ? 'text-[#FF8A00] font-black border-b-2 border-[#FF8A00]'
-                        : 'text-[#14213D] hover:text-[#FF8A00]'
-                    }`}
+                    className={`text-sm font-bold transition-all py-2 ${isActive
+                      ? 'text-[#FF8A00] font-black border-b-2 border-[#FF8A00]'
+                      : 'text-[#14213D] hover:text-[#FF8A00]'
+                      }`}
                   >
                     {item.title}
                   </Link>
@@ -163,11 +160,10 @@ export function Navbar() {
                     key={item.title}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center justify-between px-4 py-3 rounded-2xl font-bold text-sm transition-colors ${
-                      isActive
-                        ? 'bg-[#FF8A00] text-white font-black'
-                        : 'text-[#14213D] hover:bg-orange-100/70'
-                    }`}
+                    className={`flex items-center justify-between px-4 py-3 rounded-2xl font-bold text-sm transition-colors ${isActive
+                      ? 'bg-[#FF8A00] text-white font-black'
+                      : 'text-[#14213D] hover:bg-orange-100/70'
+                      }`}
                   >
                     <span>{item.title}</span>
                     <ArrowRight className="w-4 h-4" />

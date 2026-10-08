@@ -6,7 +6,8 @@ import {
   Phone, 
   Mail, 
   Send, 
-  CheckCircle2 
+  CheckCircle2,
+  User
 } from 'lucide-react';
 import { BrandLogo } from '@/components/shared/BrandLogo';
 import { InstagramIcon, FacebookIcon, YoutubeIcon } from '@/components/shared/SocialIcons';
@@ -44,13 +45,13 @@ export function Footer() {
   return (
     <footer className="bg-[#0E1B33] text-white pt-16 pb-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main 5-Column Grid matching client design */}
+        {/* Main 5-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-12 border-b border-white/10">
           {/* Column 1: Brand Logo & Tagline (Span 3) */}
           <div className="lg:col-span-3 space-y-4">
             <BrandLogo lightMode={true} />
             <p className="text-xs text-gray-300 leading-relaxed max-w-xs font-normal">
-              IcyDelight brings happiness in every bite with our delicious range of ice creams made for every mood.
+              IcyDelight brings happiness in every bite with our delicious range of artisanal ice creams made for every celebration.
             </p>
           </div>
 
@@ -82,17 +83,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Get In Touch (Span 2) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-sm font-bold text-white tracking-wide">Get In Touch</h4>
+          {/* Column 4: Get In Touch (Span 3) */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-sm font-bold text-white tracking-wide">Contact Details</h4>
             <div className="space-y-2 text-xs text-gray-300">
-              <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="w-3.5 h-3.5 text-[#FF8A00]" />
-                <span>+91 98765 43210</span>
+              <div className="flex items-center gap-2 text-white font-bold">
+                <User className="w-3.5 h-3.5 text-[#FF8A00] shrink-0" />
+                <span>Ansar Maner</span>
+              </div>
+              <a href="tel:+919923784543" className="flex items-center gap-2 hover:text-[#FF8A00] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#FF8A00] shrink-0" />
+                <span>+91 99237 84543</span>
               </a>
-              <a href="mailto:info@icydelight.com" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="w-3.5 h-3.5 text-[#FF8A00]" />
-                <span>info@icydelight.com</span>
+              <a href="tel:+919970533423" className="flex items-center gap-2 hover:text-[#FF8A00] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#FF8A00] shrink-0" />
+                <span>+91 99705 33423</span>
+              </a>
+              <a href="mailto:ansaricecream30@gmail.com" className="flex items-center gap-2 hover:text-[#FF8A00] transition-colors break-all">
+                <Mail className="w-3.5 h-3.5 text-[#FF8A00] shrink-0" />
+                <span>ansaricecream30@gmail.com</span>
               </a>
             </div>
 
@@ -128,17 +137,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 5: Newsletter (Span 3) */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Column 5: Newsletter (Span 2) */}
+          <div className="lg:col-span-2 space-y-3">
             <h4 className="text-sm font-bold text-white tracking-wide">Newsletter</h4>
             <p className="text-xs text-gray-300 leading-relaxed font-normal">
-              Subscribe to get updates on new flavors and offers.
+              Subscribe to get updates on new artisanal flavors & seasonal specials.
             </p>
 
             {isSubscribed ? (
               <div className="p-3 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Subscribed successfully!</span>
+                <span>Subscribed!</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="relative flex items-center">
@@ -147,15 +156,15 @@ export function Footer() {
                   required
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full pl-4 pr-12 py-2.5 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-gray-400 text-xs focus:outline-none focus:border-[#FF8A00]"
+                  placeholder="Your email"
+                  className="w-full pl-3.5 pr-10 py-2 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-gray-400 text-xs focus:outline-none focus:border-[#FF8A00]"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1 w-8 h-8 rounded-full bg-[#FF8A00] hover:bg-[#E67600] text-white flex items-center justify-center shadow-md transition-colors"
+                  className="absolute right-1 w-7 h-7 rounded-full bg-[#FF8A00] hover:bg-[#E67600] text-white flex items-center justify-center shadow-md transition-colors"
                   aria-label="Subscribe"
                 >
-                  <Send className="w-3.5 h-3.5" />
+                  <Send className="w-3 h-3" />
                 </button>
               </form>
             )}
