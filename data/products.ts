@@ -233,28 +233,6 @@ export const products: Product[] = [
     allergens: ['Milk']
   },
   {
-    id: 'chocolate-cup',
-    name: 'Belgian Chocolate Cup',
-    slug: 'chocolate-cup',
-    category: 'cups',
-    categoryLabel: 'Cups',
-    flavor: 'Rich Dutch & Belgian Cocoa',
-    tagline: 'Deep, rich chocolate bliss for true connoisseurs',
-    price: 0,
-    rating: 4.9,
-    reviewsCount: 450,
-    image: '/images/products/chocolate-cup.png',
-    accentColor: '#78350F',
-    lightAccent: '#FEF3C7',
-    badge: 'Deep Cocoa',
-    description: 'Thick, decadent chocolate ice cream churned with Dutch cocoa powder and melted dark chocolate chips.',
-    story: 'Rich and dark with balanced sweetness that satisfies any chocolate craving.',
-    ingredients: ['Whole Milk', 'Heavy Cream', 'Dutch Cocoa Powder', 'Dark Chocolate Chips', 'Sugar'],
-    nutrition: { calories: 165, totalFat: '8g', protein: '3.8g', carbohydrates: '20g', sugars: '16g' },
-    packSizes: ['Single Cup 100ml', 'Pack of 4'],
-    allergens: ['Milk']
-  },
-  {
     id: 'badam-shake-cup',
     name: 'Badam Shake Delight Cup',
     slug: 'badam-shake-cup',
@@ -323,7 +301,7 @@ export const products: Product[] = [
   },
   {
     id: 'family-pack-tub',
-    name: 'Grand Waffle Feast Tub',
+    name: 'Chocolate Butterscotch cone',
     slug: 'family-pack-tub',
     category: 'cones',
     categoryLabel: 'Cones',
@@ -345,7 +323,7 @@ export const products: Product[] = [
   },
   {
     id: 'cassata-slice',
-    name: 'Royal Cassata Slice',
+    name: 'Big Chocobar',
     slug: 'cassata-slice',
     category: 'sundaes',
     categoryLabel: 'Sundaes & Slices',
