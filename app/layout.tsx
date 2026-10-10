@@ -139,7 +139,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body
         className={`${poppins.variable} font-sans bg-[#FFF9F2] text-[#14213D] antialiased selection:bg-orange-100 selection:text-[#FF8A00]`}
         suppressHydrationWarning
